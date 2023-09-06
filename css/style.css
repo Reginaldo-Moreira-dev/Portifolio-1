@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
@@ -20,7 +21,7 @@
 
 html {
     font-size: 62.5%;
-    overflow: hidden;
+    overflow: -y;
 }
 
 body {
@@ -83,6 +84,21 @@ section {
 
 .home-img img {
     width: 35vw;
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+    
+    50% {
+        transform: translateY(-2.4rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .home-content h3 {
@@ -389,20 +405,24 @@ span {
         padding-bottom: 7rem;
     }
 
-.portfolio {
-    padding-bottom: 7rem;
-}
-
-.footer {
-    padding: 2rem 3%;
-}
-
-}
-
-@media (max-width: 768px) {
-    #menu-icon {
-        display: block;
+    .portfolio {
+        padding-bottom: 7rem;
     }
+
+    .contact {
+        min-height: auto;
+    }
+
+    .footer {
+        padding: 2rem 3%;
+    }
+
+    }
+
+    @media (max-width: 768px) {
+        #menu-icon {
+            display: block;
+        }
 
     .navbar {
         position: absolute;
@@ -430,54 +450,74 @@ span {
         flex-direction: column;
     }
 
-.home-content h3 {
-    font-size: 2,6rem;
-}
-
-.home-content h1 {
-    font-size: 5rem;
-}
-
-.home-img img {
-    width: 70vw;
-    margin-top: 4rem;
-}
-
-.about {
-    flex-direction: column-reverse;
-}
-
-.about img {
-    width: 70vw;
-    margin-top: 4rem;
-}
-
-.services h2 {
-    margin-bottom: 3rem;
-}
-
-.portfolio h2 {
-    margin-bottom: 3rem;
-}
-
-.portfolio-container {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-}
-
-@media (max-width: 617px) {
-    .portfolio-container {
-        grid-template-columns: 1fr;
+    .home-content h3 {
+        font-size: 2,6rem;
     }
 
+    .home-content h1 {
+        font-size: 5rem;
+    }
 
-}
+    .home-img img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
 
+    .about {
+        flex-direction: column-reverse;
+    }
 
+    .about img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
 
+    .services h2 {
+        margin-bottom: 3rem;
+    }
 
-/* 1:01:50 https://www.youtube.com/watch?v=Tkp3FDgOueM&t=1464s&ab_channel=Codehal */
-/* falta finalizar
+    .portfolio h2 {
+        margin-bottom: 3rem;
+    }
 
-resolver scrol e footer */
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    }
+
+    @media (max-width: 617px) {
+        .portfolio-container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 450px) {
+        html {
+           font-size: 50%; 
+        }
+
+        .contact form .input-box input {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 365px) {
+        .home-img img {
+            width: 90vw;
+        }
+
+        .about-img img {
+            width: 90vw;
+        }
+
+        .footer {
+            flex-direction: column-reverse;
+        }
+
+        .footer p {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+    } 
